@@ -1,0 +1,59 @@
+quick plan
+
+Know the mathematics
+DOMAIN: General Mathematics
+CONTEXT: Problem solving
+IDEA: Answer users question.
+CORE QUESTION: Is supplied number prime?
+CONSTRAINTS: number size (starting with u32 as suggested here: https://users.rust-lang.org/t/use-of-integer-types-in-practice/54213)
+COMMON-SENSE:
+    - NO non-integer types
+    - NO non-positive integers
+    + Zero is not prime
+    + One is note prime with an asterick (modern mathematicians do not consider it prime; some older mathematicians did)
+    + 2 is the smallest modern prime and only even one
+    + all even numbers are NOt prime
+    + 3 is first odd prime and start of all odds primes there after
+    + Using rules of divisibility can quickly determine prime or not without having to do calculations or filling memory
+APPROACH:
+    + create 10 new squared primes, 10 cubed primes, and 10 multiplication of primes = at initialization of each program
+        + save to file: starting prime and included primes so may keep shifting to next set
+        + run using a concurrent worker pool so launch is only slightly noticable to user
+    + while program is running but given breaks of X time, fill in gaps between start and next believed primes using two workers working at least 100 numbers apart and filling backwards
+    + take in and answer user questions until user asks to quit program
+    + quit = neatly backup everything, calculate 5-10 more primes, while asking user to wait, and exit with a human like message
+
+Bonus:
+    + TODO: randomly select from a set of messages for each possible action
+    + TODO: use clippy to make TUI attractive
+    + TODO: randomize menu options to be more interesting
+
+
+program architecture
+
+A. initialize program by telling user what the program does and how it does it
+B. in the background, count next 150 numbers (if first time, start from zero)
+C. use parallelize, concurrency, and asyncronicity to simultaneously be adding to the numbers database while handling current user questions
+D. when user provides an input to see if prime, first try to eliminate it
+E. elimination #1: invalid input
+F. elimination #2: invalid type (string, boolean, etc)
+G. elimination #3: invalid number (negative, decimal, nonnatural)
+H. elimination #4: invalid natural number (0 or 1) - special case tell user why not prime
+E. elimination #5: invalid number by expanding set of divisibility rules
+
+
+should calculate and save another 100 prime numbers starting from the last one
+
+
+
+
+Extra Credit:
+
+    * TODO: abstract rules of divisibility for large numbers based on known rules of divisibility for small numbers
+        * example: every even number other than 2 is non-prime
+    * TODO: give program a personality like Jarvis from MCU
+    * TODO: turn into something more useful - game, cryptography, etc
+    * TODO: add MIT and Stanford explanations of why 0 and 1 are not prime
+    * TODO: show rules of divisibility with each answer (collect known ones & write new ones)
+
+

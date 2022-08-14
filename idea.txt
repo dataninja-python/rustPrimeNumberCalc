@@ -1,0 +1,9 @@
+I'm a weirdo. So, I decided to make this more exciting:
+
+    1. Use emacs to write all my code (I presume this eliminates all the 'cheating' that IDEs typically do. This is a challenge to teach me to be more detail oriented. I do NOT recommend this.)
+    2. Write the primary code in Common Lisp
+    3. Transpile the code first to Haskell to make sure my mathematic reasoning is sound
+    4. Then, if it succeeds, transpile the code to Rust
+    5. Compile the final...hopefully more efficient and accurate Rust code as a TUI
+
+

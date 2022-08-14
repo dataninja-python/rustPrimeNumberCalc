@@ -1,0 +1,12 @@
+Transform this app into webassembly and build it into a question and answer app.
+
+What is a good app?
+    * a cool game:
+        * hangman but the guess is related to is the number prime or what numbers is a number divisible by
+        * allow you to bet some of your points to win
+        * include random occurances like daily doubles, triples, up to 10x
+            * this does increase the difficulty of the question but only logrithmically - not linear scaling - so a 10x question is not 2x as hard as a 5x question only like ~1.80x.
+    * use as part of my GRE quant prep:
+        * reasoning and number intuition are keys to quick estimation and calculation needed to answer all questions in <= 1.5 minutes.
+
+
